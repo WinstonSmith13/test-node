@@ -1,21 +1,39 @@
-// Charge le module HTTP
 const http = require("http");
+const fs = require("fs");
 
 const hostname = "127.0.0.1";
 const port = 8000;
 
-// Crée un serveur HTTP
+
 const server = http.createServer((req, res) => {
-  // Configure l'en-tête de la réponse HTTP
-  // avec le code du statut et le type de contenu
-  res.writeHead(200, { "Content-Type": "text/plain" });
 
-  // Envoie le corps de la réponse « Salut tout le monde »
-  res.end("Salut tout le monde\n");
+  res.setHeader('Content-Type', 'text/html');
+  let path = './views'
+  switch(req.url){
+    case '/': 
+      path += '/index.html';
+      res.statusCode = 200;
+      break;
+    case '/about':
+      path += '/about.html';
+      res.statusCode = 200;
+      break;
+    default: 
+      path += '/404.html';
+      res.statusCode = 404;
+      break;
+  }
+
+  fs.readFile(path, (err, data) => {
+if ( err) {
+  console.log(err);
+}else {
+  res.end(data);
+}
+  })
+
 });
 
-// Démarre le serveur à l'adresse 127.0.0.1 sur le port 8000
-// Affiche un message dès que le serveur commence à écouter les requêtes
 server.listen(port, hostname, () => {
-  console.log(`Le serveur tourne à l'adresse https://${hostname}:${port}/`);
-});
+  console.log(`Le serveur tourne à l'adresse http://${hostname}:${port}/`);
+}); 

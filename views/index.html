@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Test</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-200 p-10">
+
+<div class="w-64 border-2 border-primary shadow-md hover:shadow-lg hover:bg-primary text-primary hover:text-white group flex flex-col justify-start overflow-hidden rounded-md transition-colors duration-100">
+
+    <!-- Image container -->
+    <div class="relative w-full overflow-hidden rounded-t-md">
+        <img src="https://via.placeholder.com/150" alt="Image" class="w-full h-32 object-cover group-hover:scale-105 transform transition-transform duration-300">
+    </div>
+
+    <!-- Content container -->
+    <div class="p-4 space-y-2 text-xs sm:text-sm">
+        <p class="flex items-center space-x-2 text-primary font-semibold transition-colors group-hover:text-white">
+            <span class="w-4 h-4 flex-shrink-0">📍</span>
+            <span class="flex-shrink-3">Test Title</span>
+        </p>
+
+        <p class="text-gray-600 truncate">
+            123 Main St, City, Country
+        </p>
+
+        <div class="flex flex-wrap gap-1 mb-4 h-14 overflow-x-auto">
+            <span class="text-xs sm:text-sm h-6 font-light flex items-center rounded-full bg-gray-200 hover:bg-gray-300 transition-transform transform hover:scale-105 px-2 py-1">Label 1</span>
+            <span class="text-xs sm:text-sm h-6 font-light flex items-center rounded-full bg-gray-200 hover:bg-gray-300 transition-transform transform hover:scale-105 px-2 py-1">Label 2</span>
+            <span class="text-xs sm:text-sm h-6 font-light flex items-center rounded-full bg-gray-200 hover:bg-gray-300 transition-transform transform hover:scale-105 px-2 py-1">Label 3</span>
+            <span class="text-xs sm:text-sm h-6 font-light flex items-center px-2 py-1">+2 more</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
