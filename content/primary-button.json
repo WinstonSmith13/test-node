@@ -1,0 +1,60 @@
+{
+    "components": [
+      {
+        "name": "PrimaryButton",
+        "template": {
+          "type": "nuxt-link",
+          "attributes": {
+            ":to": "to",
+            ":target": "target",
+            "@click": "$emit('click')",
+            "class": "flex justify-center items-center text-white bg-primary py-2 px-4 hover:bg-primaryDark transition-all ease-in-out duration-200 cursor-pointer"
+          },
+          "children": [
+            {
+              "type": "span",
+              "text": "{{ label }}"
+            },
+            {
+              "type": "icon",
+              "conditions": ["icon"],
+              "attributes": {
+                ":icon": "icon",
+                "width": "15"
+              }
+            }
+          ]
+        },
+        "props": [
+          {
+            "name": "label",
+            "type": "String",
+            "default": "Click me"
+          },
+          {
+            "name": "icon",
+            "type": "String",
+            "default": ""
+          },
+          {
+            "name": "to",
+            "type": "String",
+            "default": ""
+          },
+          {
+            "name": "target",
+            "type": "String",
+            "default": "_self"
+          }
+        ],
+        "events": ["click"],
+        "imports": [
+          {
+            "import": "Icon",
+            "from": "@iconify/vue"
+          }
+        ]
+      }
+    ]
+  }
+  
